@@ -1,0 +1,15 @@
+
+[
+  {
+    "title": "Predictive Maintenance System",
+    "impact": "Reduced unplanned downtime by 19%",
+    "tech": "Python, XGBoost, Feature Engineering",
+    "github": "https://github.com/yourname/predictive-maintenance"
+  },
+  {
+    "title": "Malicious Web Page Detection",
+    "impact": "98.67% detection accuracy",
+    "tech": "Machine Learning, Classification",
+    "github": "https://github.com/yourname/malicious-web"
+  }
+]
