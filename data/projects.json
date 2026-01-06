@@ -1,0 +1,21 @@
+
+[
+  {
+    "title": "Predictive Maintenance System",
+    "impact": "Reduced unplanned downtime by 19%",
+    "tech": "Python, XGBoost, Feature Engineering",
+    "github": "https://github.com/siwarkar/predicting-time-to-failure"
+  },
+  {
+    "title": "Malicious Web Page Detection",
+    "impact": "98.67% detection accuracy",
+    "tech": "Machine Learning, Classification",
+    "github": "https://github.com/siwarkar/predicting-time-to-failure"
+  },
+  {
+    "title": "Customer Buying Behavior Analysis",
+    "impact": "identify customer purchasing patterns with 89.6% accuracy",
+    "tech": "Conducted EDA, data cleaning, and visualization to uncover actionable business insights",
+    "github": "https://github.com/siwarkar/predicting-time-to-failure"
+  }
+]
