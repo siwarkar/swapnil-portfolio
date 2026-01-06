@@ -68,7 +68,7 @@ h2{color:var(--primary);margin-bottom:15px}
 
 /* PROJECTS */
 .projects-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px
+display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px
 }
 .project-card{
 background:var(--card);border-radius:6px;overflow:hidden;
@@ -641,4 +641,40 @@ body.dark .project-tags span {
 .notebook-card span {
   font-size: 0.8rem;
   color: #666;
+}
+.certificate-list.vertical {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certificate-list.vertical li {
+  margin-bottom: 12px;   /* एक certificate = एक line */
+}
+
+.certificate-list.vertical a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  background: #f8f8f8;
+  border-radius: 10px;
+
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.certificate-list.vertical a:hover {
+  background: #000;
+  color: #fff;
+  transform: translateX(6px);
+}
+
+.certificate-list.vertical i {
+  font-size: 18px;
 }
