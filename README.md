@@ -1,148 +1,123 @@
-🚀 Data Science & Machine Learning Portfolio
+# 🚀 Data Science & Machine Learning Portfolio
 
-A professional portfolio website showcasing Machine Learning projects, dashboards, models, and notebooks, built to demonstrate end-to-end data science skills — from data analysis to deployment.
+A professional **Data Science & Machine Learning portfolio website** showcasing end-to-end projects—from **data exploration and modeling** to **visualization and deployment-ready solutions**.
 
-This portfolio is designed for recruiters, hiring managers, and collaborators to easily explore projects, dashboards, and technical expertise.
+This portfolio is designed for **recruiters, hiring managers, and collaborators** to quickly evaluate technical depth, practical problem-solving skills, and real-world project experience.
 
-🌐 Website Sections
+---
 
-Home – Introduction and overview
+## 🌐 Website Sections
 
-Portfolio – Featured ML & Data Science projects
+- **Home** – Professional introduction and overview  
+- **Portfolio** – Featured Data Science & ML projects  
+- **Dashboards** – Interactive data visualizations and KPIs  
+- **Models** – Machine Learning model demos and results  
+- **Notebooks** – EDA, experimentation, and feature engineering  
+- **Certificates** – Technical certifications and achievements  
 
-Dashboard – Interactive visualizations
+---
 
-Models – Machine learning model demos
-
-Notebooks – EDA and experimentation notebooks
-
-Certificates – Technical certifications
-
-📂 Project Structure
+## 📂 Project Structure
 portfolio/
 │
-├── assets/                    # Static assets (CSS, JS, icons, fonts)
+├── assets/ # Static assets (CSS, JS, fonts, icons)
+├── certificate/ # Certificates and achievements
+├── data/ # Datasets used in projects
+├── image/ # Images, screenshots, visuals
 │
-├── certificate/               # Certificates and achievements
+├── index.html # Main landing page
+├── portfolio_ultimate.html # Complete project portfolio
+├── dashboard.html # Interactive dashboards
+├── models.html # Machine learning models showcase
+├── notebook.html # Jupyter notebook previews
 │
-├── data/                      # Datasets used in projects
-│
-├── image/                     # Images, screenshots, visuals
-│
-├── dashboard.html             # Data dashboards page
-├── index.html                 # Main landing page
-├── models.html                # Machine learning models showcase
-├── notebook.html              # Jupyter notebook previews
-├── portfolio_ultimate.html    # Complete project portfolio page
-│
-└── README.md                  # Project documentation
+└── README.md # Project documentation
+---
 
-🧠 Skills Demonstrated
-🔹 Data Science & Machine Learning
+## 🧠 Skills Demonstrated
 
-Exploratory Data Analysis (EDA)
+### 🔹 Data Science & Machine Learning
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Model Training & Evaluation
+- Regression & Classification Models
+- XGBoost & Scikit-learn
+- Model Interpretation & Insights
 
-Feature Engineering
+### 🔹 Data Visualization
+- Interactive dashboards
+- KPI-driven analysis
+- Business-focused storytelling
+- Insightful charts and plots
 
-Model Training & Evaluation
+### 🔹 Web & Deployment
+- HTML-based portfolio website
+- Project-based navigation
+- Ready for cloud or static hosting
 
-Regression & Classification Models
+---
 
-XGBoost, Scikit-learn
+## 📊 Featured Content
 
-Model Interpretation
+### 📌 Machine Learning Models
+- Predictive analytics projects
+- Trained models on real-world datasets
+- Performance metrics and evaluation
 
-🔹 Data Visualization
+### 📌 Dashboards
+- Interactive visualizations
+- Business-oriented KPIs
+- Clear insights for decision-making
 
-Interactive dashboards
+### 📌 Notebooks
+- Step-by-step EDA
+- Feature engineering workflows
+- Model experimentation and tuning
 
-Business-oriented insights
+### 📌 Certificates
+- Technical learning milestones
+- Verified achievements
 
-Clear storytelling with data
+---
 
-🔹 Web & Deployment
+## 🛠️ Technologies Used
 
-HTML-based portfolio website
+### Programming & Data
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
 
-Project-based navigation
+### Visualization & Analysis
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-Ready for cloud or static hosting
+### Web
+- HTML
+- CSS
+- JavaScript (optional)
 
-📊 Featured Content
+---
 
-Machine Learning Models
+## 🚀 How to Run Locally
 
-Predictive analytics projects
-
-Trained models with real datasets
-
-Dashboards
-
-Interactive data visualizations
-
-KPI-focused insights
-
-Notebooks
-
-Step-by-step EDA
-
-Model experimentation
-
-Feature engineering logic
-
-Certificates
-
-Technical learning and achievements
-
-🛠️ Technologies Used
-Programming & Data
-
-Python
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-XGBoost
-
-Visualization & Analysis
-
-Matplotlib
-
-Seaborn
-
-Jupyter Notebook
-
-Web
-
-HTML
-
-CSS
-
-JavaScript (if applicable)
-
-🚀 How to Run Locally
-
-Clone the repository
-
+Clone the repository:
+```bash
 git clone https://github.com/your-username/portfolio.git
-
-
-Open index.html in your browser
-or use a local server:
-
+```
+Navigate to the project folder and start a local server:
+```bash
 python -m http.server
+```
+Open in your browser:
+```bash
+(http://localhost:8000)
+```
+## 📈 Use Cases
 
-
-Visit:
-
-http://localhost:8000
-
-📈 Use Cases
-
-Job applications (Data Scientist / ML Engineer / Analyst)
+Job applications (Data Scientist / ML Engineer / Data Analyst)
 
 Project demonstrations
 
@@ -150,22 +125,22 @@ Learning reference
 
 Technical blogging & showcases
 
-🔮 Future Enhancements
+## 🔮 Future Enhancements
 
-Add Streamlit or FastAPI apps
+Add Streamlit or FastAPI applications
 
 Deploy on AWS / Netlify / GitHub Pages
 
 Add CI/CD pipeline
 
-Add project-wise documentation pages
+Create project-wise documentation pages
 
 Add live model inference demos
 
-✨ Author
+## ✨ Author
 
 Swapnil Iwarkar
 Data Science | Machine Learning | Analytics
 
 📫 Connect with me on LinkedIn
-📁 Explore more projects on GitHub
+
