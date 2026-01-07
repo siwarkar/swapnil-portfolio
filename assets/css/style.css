@@ -264,7 +264,7 @@ body.dark .skill-icon::after {
 }
 
 .hero-illustration {
-  max-width: 1020px;
+  max-width: 1220px;
   width: 100%;
   animation: float 4s ease-in-out infinite;
 }
