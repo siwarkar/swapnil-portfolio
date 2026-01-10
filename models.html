@@ -1,128 +1,187 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 <head>
-    <title>swapnil iwarkar</title>
-    <meta charset="UTF-8">
-	<link rel="shortcut icon" href="./assets/image/sw.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="./assets/css/style1.css">
-	<script src="https://kit.fontawesome.com/de71e220d0.js" crossorigin="anonymous"></script>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	.portfolio-image-container img {
-	    border-radius: 10px; /* Adjust the radius as needed */
-	    object-fit: cover;
-	}
-	#my-image img {
-	    transition: transform 0.9s, box-shadow 0.9s;
-	    /* Ensures the transition effect is smooth */
-	}
-	#my-image img:hover {
-	    transform: scale(1.25);
-	    /* Slightly enlarges the image on hover */
-	    box-shadow: 0 8px 10px rgba(0, 0, 1, 1.2);
-	    /* Adds a subtle shadow around the image */
-	}
+  <meta charset="UTF-8">
+  <title>Swapnil Iwarkar | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="./assets/image/sw.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style1.css">
+  <script src="https://kit.fontawesome.com/de71e220d0.js" crossorigin="anonymous"></script>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #0a66c2;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-soft: #e2e8f0;
+      --powerbi: #f2c811;
+      --jupyter: #f97316;
+    }
+
+    body {
+      background: var(--bg-main);
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
     .section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 20px;
-  }
-     .notebook-controls {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
-  }
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
 
-  .notebook-controls input,
-  .notebook-controls select {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
+    /* DASHBOARD CONTROLS */
+    .notebook-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
 
-  .notebook-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-  }
+    .notebook-controls input,
+    .notebook-controls select {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-soft);
+      font-size: 14px;
+      min-width: 180px;
+    }
 
-  .notebook-card {
-    background: #fff;
-    padding: 18px;
-    border-radius: 14px;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-  }
+    /* GROUP */
+    .repo-group {
+      background: var(--card-bg);
+      border-radius: 14px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
 
-  .notebook-card:hover {
-    transform: translateY(-6px);
-  }
+    .repo-header {
+      padding: 14px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+    }
 
-  .notebook-card h3 {
-    color: #0a66c2;
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-  }
+    .repo-header span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
 
-  .notebook-card span {
-    font-size: 0.8rem;
-    color: #777;
-  }
-	</style>
-	
-	</head>
-	<body>
-        <!-- Top Scroll Bar -->
-        <div id="scroll-bar"></div>
-		<header id="header">
-			
-			<div id="name-social-container">
-				<div class="text-center">
-					<h1 id="my-name">
-					    <span style="color: red;">S</span>wapnil <span style="color: red;">I</span>warkar
-					</h1>
-				</div>
-			</div>
-		<social>
-				<ul class="horizontal-list social-icon text-center">
-					<li>
-						<a href="https://linkedin.com/in/swapnil-iwarkar66" target="_blank" title="Linkedin"><img src="./assets/image/linkedin.png" alt="Tamanna's Linkedin profile"></i></a>
-					</li>
-                    
-					<li>
-						<a href="https://github.com/siwarkar" target="_blank" title="Github"><img src="./assets/image/github.png" alt="Tamanna's Github profile"></a>
-					</li>
+    .repo-files {
+      padding: 10px;
+      display: none;
+    }
 
-				</ul>
-		</social>
+    .repo-group.open .repo-files {
+      display: block;
+    }
 
-		</header>
-		<main>
-		<section id="about">
-		    <div id="my-image">
-		        <img src="./assets/image/swapnil2.png" alt="Profile Picture">
-		    </div>
-		</section>
-			
-    <section class="section">
-  <h2>Python</h2>
+    /* FILE ROW */
+    .file-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .file-row:hover {
+      background: #f8fafc;
+    }
+
+    .file-icon {
+      font-size: 22px;
+    }
+
+    .pbix { color: var(--powerbi); }
+    .ipynb { color: var(--jupyter); }
+
+    .file-info {
+      flex: 1;
+    }
+
+    .file-info h4 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .file-info p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .file-action {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .file-action {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="scroll-bar"></div>
+
+<header id="header">
+  <div id="name-social-container">
+    <div class="text-center">
+      <h1 id="my-name">
+        <span style="color:red">S</span>wapnil <span style="color:red">I</span>warkar
+      </h1>
+    </div>
+  </div>
+
+  <social>
+    <ul class="horizontal-list social-icon text-center">
+      <li><a href="https://linkedin.com/in/swapnil-iwarkar66" target="_blank"><img src="./assets/image/linkedin.png"></a></li>
+      <li><a href="https://github.com/siwarkar" target="_blank"><img src="./assets/image/github.png"></a></li>
+    </ul>
+  </social>
+</header>
+
+<main>
+
+<section id="about">
+  <div id="my-image">
+    <img src="./assets/image/swapnil2.png" alt="Profile Picture">
+  </div>
+</section>
+
+<!-- ===== DASHBOARD ===== -->  
+<section class="section">
+  <h2>All Python collection</h2>
 
   <div class="notebook-controls">
-    <input type="text" id="search" placeholder="Search python file...">
+    <input type="text" id="search" placeholder="Search python file…">
     <select id="sort">
       <option value="az">Sort A–Z</option>
       <option value="za">Sort Z–A</option>
     </select>
   </div>
 
-  <div id="notebooks" class="notebook-grid"></div>
+  <div id="notebooks"></div>
 </section>
 
+<!-- ===== SCRIPT ===== -->
 <script>
 /* ====== CONFIG: ADD MORE REPOS HERE ====== */
 const REPOS = [
@@ -153,67 +212,99 @@ const REPOS = [
   },
 ];
 
-let notebooks = [];
+let files = [];
 
 const container = document.getElementById("notebooks");
 const searchInput = document.getElementById("search");
 const sortSelect = document.getElementById("sort");
 
-/* ====== FETCH ALL REPOS ====== */
-Promise.all(
-  REPOS.map(r =>
-    fetch(`https://api.github.com/repos/${r.user}/${r.repo}/contents/${r.folder}`)
-      .then(res => res.json())
-      .then(files =>
-        files
+async function fetchFiles() {
+  const data = await Promise.all(
+    REPOS.map(async r => {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${r.user}/${r.repo}/contents/${r.folder}`);
+        const list = await res.json();
+        if (!Array.isArray(list)) return [];
+
+        return list
           .filter(f => f.name.endsWith(".py"))
           .map(f => ({
-            name: f.name.replace(".py", ""),
+            name: f.name.replace(/\.(py)$/i, ""),
+            type: f.name.endsWith(".py") ?"py":"ipynb",
             repo: r.repo,
-            url: `https://nbviewer.org/github/${r.user}/${r.repo}/blob/main/${r.folder}/${f.name}`
-          }))
-      )
-      .catch(() => [])
-  )
-).then(results => {
-  notebooks = results.flat();
-  render();
-});
+            size: (f.size / 1024).toFixed(1) + " KB",
+            url: f.name.endsWith(".py")
+              ? `https://nbviewer.org/github/${r.user}/${r.repo}/blob/main/${r.folder}/${f.name}`
+              : f.download_url
+          }));
+      } catch {
+        return [];
+      }
+    })
+  );
 
-/* ====== RENDER FUNCTION ====== */
+  files = data.flat();
+  render();
+}
+
 function render() {
   const query = searchInput.value.toLowerCase();
   const order = sortSelect.value;
 
-  let list = notebooks.filter(n =>
-    n.name.toLowerCase().includes(query) ||
-    n.repo.toLowerCase().includes(query)
+  let filtered = files.filter(f =>
+    f.name.toLowerCase().includes(query) ||
+    f.repo.toLowerCase().includes(query)
   );
 
-  list.sort((a, b) =>
-    order === "az"
-      ? a.name.localeCompare(b.name)
-      : b.name.localeCompare(a.name)
+  filtered.sort((a, b) =>
+    order === "az" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
   );
 
   container.innerHTML = "";
 
-  list.forEach(n => {
-    container.innerHTML += `
-      <a class="notebook-card" href="${n.url}" target="_blank">
-        <h3>${n.name}</h3>
-        <span>${n.repo}</span>
-      </a>
-    `;
+  const grouped = {};
+  filtered.forEach(f => {
+    grouped[f.repo] = grouped[f.repo] || [];
+    grouped[f.repo].push(f);
+  });
+
+  Object.entries(grouped).forEach(([repo, items]) => {
+    const group = document.createElement("div");
+    group.className = "repo-group open";
+
+    const header = document.createElement("div");
+    header.className = "repo-header";
+    header.innerHTML = `📁 ${repo} <span>${items.length} files</span>`;
+    header.onclick = () => group.classList.toggle("open");
+
+    const list = document.createElement("div");
+    list.className = "repo-files";
+
+    items.forEach(f => {
+      list.innerHTML += `
+        <a class="file-row" href="${f.url}" target="_blank" ${f.type === "pbix" ? "download" : ""}>
+          <div class="file-icon ${f.type}">${f.type === "pbix" ? "📊" : "📓"}</div>
+          <div class="file-info">
+            <h4>${f.name}</h4>
+            <p>${f.type.toUpperCase()} • ${f.size}</p>
+          </div>
+          <div class="file-action">${f.type === "pbix" ? "Download" : "Open"}</div>
+        </a>
+      `;
+    });
+
+    group.appendChild(header);
+    group.appendChild(list);
+    container.appendChild(group);
   });
 }
 
-/* ====== EVENTS ====== */
 searchInput.addEventListener("input", render);
 sortSelect.addEventListener("change", render);
+
+fetchFiles();
 </script>
-        </section>
-        <div class="footer">
+ <div class="footer">
       <social>
 				<ul class="horizontal-list social-icon text-center">
           <p style="font-size: 16px;"> Thank you for visiting my personal portfolio website. Connect with me over socials. Keep Rising 🚀. </p>
@@ -231,8 +322,9 @@ sortSelect.addEventListener("change", render);
           
             <button id="topbtn" title="Back To Top"><i class="fas fa-angle-up"></i></button>
         </main>
-        
-        <script type="text/javascript" src="./assets/js/script.js"></script>
+
+<script src="./assets/js/script1.js"></script>
+
+</main>
 </body>
 </html>
-
