@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Jupyter Notebooks</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-  }
-
-  .section {
+    <title>swapnil iwarkar</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="./assets/image/sw.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style1.css">
+	<script src="https://kit.fontawesome.com/de71e220d0.js" crossorigin="anonymous"></script>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	.portfolio-image-container img {
+	    border-radius: 10px; /* Adjust the radius as needed */
+	    object-fit: cover;
+	}
+	#my-image img {
+	    transition: transform 0.9s, box-shadow 0.9s;
+	    /* Ensures the transition effect is smooth */
+	}
+	#my-image img:hover {
+	    transform: scale(1.25);
+	    /* Slightly enlarges the image on hover */
+	    box-shadow: 0 8px 10px rgba(0, 0, 1, 1.2);
+	    /* Adds a subtle shadow around the image */
+	}
+    .section {
     max-width: 1000px;
     margin: 60px auto;
     padding: 20px;
   }
-
-  h2 {
-    text-align: center;
-  }
-
-  .notebook-controls {
+     .notebook-controls {
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -67,12 +73,43 @@
     font-size: 0.8rem;
     color: #777;
   }
-</style>
-</head>
+	</style>
+	
+	</head>
+	<body>
+        <!-- Top Scroll Bar -->
+        <div id="scroll-bar"></div>
+		<header id="header">
+			
+			<div id="name-social-container">
+				<div class="text-center">
+					<h1 id="my-name">
+					    <span style="color: red;">S</span>wapnil <span style="color: red;">I</span>warkar
+					</h1>
+				</div>
+			</div>
+		<social>
+				<ul class="horizontal-list social-icon text-center">
+					<li>
+						<a href="https://linkedin.com/in/swapnil-iwarkar66" target="_blank" title="Linkedin"><img src="./assets/image/linkedin.png" alt="Tamanna's Linkedin profile"></i></a>
+					</li>
+                    
+					<li>
+						<a href="https://github.com/siwarkar" target="_blank" title="Github"><img src="./assets/image/github.png" alt="Tamanna's Github profile"></a>
+					</li>
 
-<body>
+				</ul>
+		</social>
 
-<section class="section">
+		</header>
+		<main>
+		<section id="about">
+		    <div id="my-image">
+		        <img src="./assets/image/swapnil2.png" alt="Profile Picture">
+		    </div>
+		</section>
+			
+    <section class="section">
   <h2>Jupyter Notebooks</h2>
 
   <div class="notebook-controls">
@@ -85,7 +122,6 @@
 
   <div id="notebooks" class="notebook-grid"></div>
 </section>
-
 <script>
 /* ====== CONFIG: ADD MORE REPOS HERE ====== */
 const REPOS = [
@@ -180,8 +216,27 @@ function render() {
 searchInput.addEventListener("input", render);
 sortSelect.addEventListener("change", render);
 </script>
+ </section>
+        <div class="footer">
+      <social>
+				<ul class="horizontal-list social-icon text-center">
+          <p style="font-size: 16px;"> Thank you for visiting my personal portfolio website. Connect with me over socials. Keep Rising 🚀. </p>
+            <p>Designed with <span class="heart-icon">&#10084;</span> by Swapnil Iwarkar</a></p>
+            <p>📧 s.iwarkar6@gmail.com |📞 +91-9370757764 |
+					<li>
+						<a href="https://linkedin.com/in/swapnil-iwarkar66" target="_blank" title="Linkedin"><img src="./assets/image/linkedin.png" alt="Tamanna's Linkedin profile"></i></a>
+					</li>   
+					<li>
+						<a href="https://github.com/siwarkar" target="_blank" title="Github"><img src="./assets/image/github.png" alt="Tamanna's Github profile"></a>
+					</li>
 
+				</ul>
+		</social>
+          
+            <button id="topbtn" title="Back To Top"><i class="fas fa-angle-up"></i></button>
+        </main>
+        
+        <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
-
 
