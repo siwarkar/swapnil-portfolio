@@ -109,11 +109,11 @@
 		    </div>
 		</section>
 			
-    <section class="section">
+   <section class="section">
   <h2>Dashboard</h2>
 
   <div class="notebook-controls">
-    <input type="text" id="search" placeholder="Search Dashboard...">
+    <input type="text" id="search" placeholder="Search files...">
     <select id="sort">
       <option value="az">Sort A–Z</option>
       <option value="za">Sort Z–A</option>
@@ -144,41 +144,51 @@ const REPOS = [
 
 ];
 
-let notebooks = [];
+/* ================= STATE ================= */
+let filesList = [];
 
 const container = document.getElementById("notebooks");
 const searchInput = document.getElementById("search");
 const sortSelect = document.getElementById("sort");
 
-/* ====== FETCH ALL REPOS ====== */
-Promise.all(
-  REPOS.map(r =>
-    fetch(`https://api.github.com/repos/${r.user}/${r.repo}/contents/${r.folder}`)
-      .then(res => res.json())
-      .then(files =>
-        files
-          .filter(f => f.name.endsWith(".pbix"))
-          .map(f => ({
-            name: f.name.replace(".pbix", ""),
-            repo: r.repo,
-            url: `https://nbviewer.org/github/${r.user}/${r.repo}/blob/main/${r.folder}/${f.name}`
-          }))
-      )
-      .catch(() => [])
-  )
-).then(results => {
-  notebooks = results.flat();
-  render();
-});
+/* ================= FETCH FILES ================= */
+async function fetchAllFiles() {
+  const responses = await Promise.all(
+    REPOS.map(async r => {
+      try {
+        const res = await fetch(
+          `https://api.github.com/repos/${r.user}/${r.repo}/contents/${r.folder}`
+        );
+        const files = await res.json();
+        if (!Array.isArray(files)) return [];
 
-/* ====== RENDER FUNCTION ====== */
+        return files
+          .filter(f => f.name.endsWith(".pbix") || f.name.endsWith(".ipynb"))
+          .map(f => ({
+            name: f.name.replace(/\.(pbix|ipynb)$/i, ""),
+            repo: r.repo,
+            url: f.name.endsWith(".ipynb")
+              ? `https://nbviewer.org/github/${r.user}/${r.repo}/blob/main/${r.folder}/${f.name}`
+              : f.download_url
+          }));
+      } catch {
+        return [];
+      }
+    })
+  );
+
+  filesList = responses.flat();
+  render();
+}
+
+/* ================= RENDER ================= */
 function render() {
   const query = searchInput.value.toLowerCase();
   const order = sortSelect.value;
 
-  let list = notebooks.filter(n =>
-    n.name.toLowerCase().includes(query) ||
-    n.repo.toLowerCase().includes(query)
+  let list = filesList.filter(f =>
+    f.name.toLowerCase().includes(query) ||
+    f.repo.toLowerCase().includes(query)
   );
 
   list.sort((a, b) =>
@@ -189,19 +199,22 @@ function render() {
 
   container.innerHTML = "";
 
-  list.forEach(n => {
+  list.forEach(f => {
     container.innerHTML += `
-      <a class="notebook-card" href="${n.url}" target="_blank">
-        <h3>${n.name}</h3>
-        <span>${n.repo}</span>
+      <a class="notebook-card" href="${f.url}" target="_blank" ${f.url.includes("download") ? "download" : ""}>
+        <h3>${f.name}</h3>
+        <span>${f.repo}</span>
       </a>
     `;
   });
 }
 
-/* ====== EVENTS ====== */
+/* ================= EVENTS ================= */
 searchInput.addEventListener("input", render);
 sortSelect.addEventListener("change", render);
+
+/* ================= INIT ================= */
+fetchAllFiles();
 </script>
         </section>
         <div class="footer">
@@ -226,5 +239,6 @@ sortSelect.addEventListener("change", render);
         <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
+
 
 
